@@ -11,7 +11,10 @@ const typeDefs = gql`
   type Bookmark {
     url: String!
     pageTitle: String!
-    description: String!
+    description: String
+  }
+  type Mutation {
+    addBookmark(url: String!, pageTitle: String!, description: String) : Bookmark
   }
 `
 
@@ -42,6 +45,28 @@ const resolvers = {
       // return bookmarks
     },
   },
+  Mutation: {
+    addBookmark: async (_, { url, pageTitle, description }) => {
+      console.log(url)
+      try {
+        const result = await client.query(
+          q.Create(
+            q.Collection('links'),
+            {
+              data: {
+                url,
+                pageTitle,
+                description
+              }
+            }
+          )
+        )
+        return result.ref.data
+      } catch (error) {
+        console.log('Error')
+      }
+    }
+  }
 }
 
 const server = new ApolloServer({
