@@ -43,10 +43,10 @@ export default function Home() {
     return (
       <>
 
-        <div class="jumbotron">
-          <h1 class="display-3">One Day!</h1>
-          <p class="lead">I will read/watch everything I saved here.</p>
-          <hr class="my-4" />
+        <div className="jumbotron">
+          <h1 className="display-3">One Day!</h1>
+          <p className="lead">I will read/watch everything I saved here.</p>
+          <hr className="my-4" />
           <p>This app is developed using Gatsby, Netlify and FaunaDB</p>
           <p>View the source code on <a href="https://github.com/usamasubhani/oneday">Github</a>. Connect with me on <a href="https://twitter.com/basedusama">Twitter</a>.</p>
         </div>
