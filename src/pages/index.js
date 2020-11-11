@@ -27,7 +27,7 @@ export default function Home() {
     addBookmark({
       variables: {
         url: url.value,
-        title: title.value,
+        pageTitle: title.value,
         description: desc.value
       },
       refetchQueries: [{ query: BookMarksQuery }],
