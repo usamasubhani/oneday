@@ -32,8 +32,6 @@ export default function Home() {
       },
       refetchQueries: [{ query: BookMarksQuery }],
     })
-    // console.log('textfield', textfield.value)
-    console.log('Desc', desc.value)
   }
 
   if (loading) {
@@ -67,10 +65,6 @@ export default function Home() {
 
           {data.bookmarks.map((bookmark) => {
             return (<>
-              {/* <p>{bookmark.url}</p>
-            <p>{bookmark.pageTitle}</p>
-            <p>{bookmark.description}</p> */}
-
               <div className="col-sm-12">
                 <div className="card border-secondary min-vh-500 m-3 p-3">
                   <h5 className="card-title">{bookmark.pageTitle}</h5>
@@ -85,21 +79,4 @@ export default function Home() {
       </>
     )
   }
-  return (
-    <div>
-      {/* <p>{JSON.stringify(data)}</p>
-      <div>
-        <input type="text" placeholder="URL" ref={node => url = node} />
-        <input type="text" placeholder="Page Title" ref={node => title = node} />
-        <input type="text" placeholder="Description" ref={node => desc = node} />
-        <button onClick={addBookmarkSubmit}>Add BookMark</button>
-      </div> */}
-    </div>
-  )
-  // if (data) {
-  //   return <p>{JSON.stringify(data)}</p>
-  // }
-  // else {
-  //   return <p>Not Found</p>
-  // }
 }
